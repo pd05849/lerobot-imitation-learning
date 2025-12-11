@@ -1,0 +1,89 @@
+# .gitignore for LeRobot Imitation Learning Project
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Dataset files (too large for git)
+data/*.hdf5
+data/*.mp4
+data/*.avi
+data/videos/
+data/episodes/
+
+# Keep data folder structure
+!data/.gitkeep
+!data/DATA.md
+
+# Model checkpoints (too large)
+results/checkpoints/
+results/*.pt
+results/*.pth
+results/*.ckpt
+results/best_model/
+results/act_model/*.pt
+
+# Keep results folder structure
+!results/.gitkeep
+!results/README.md
+!results/plots/
+
+# Tensorboard logs
+results/logs/
+logs/
+runs/
+
+# Training outputs
+*.log
+wandb/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Hardware calibration data (may contain sensitive info)
+calibration_*.json
+motor_config_*.yaml

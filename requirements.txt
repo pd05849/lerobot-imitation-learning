@@ -1,0 +1,34 @@
+# Python Dependencies
+lerobot>=2.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+pillow>=10.0.0
+h5py>=3.9.0
+datasets>=2.14.0
+huggingface-hub>=0.17.0
+transformers>=4.33.0
+accelerate>=0.23.0
+tensorboard>=2.14.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+pandas>=2.0.0
+scipy>=1.11.0
+tqdm>=4.66.0
+
+# Video processing
+imageio>=2.31.0
+imageio-ffmpeg>=0.4.9
+
+# For Google Colab (optional)
+ipywidgets>=8.1.0
+jupyter>=1.0.0
+
+# Hardware communication
+pyserial>=3.5
+dynamixel-sdk>=3.7.31
+
+# Utilities
+pyyaml>=6.0.1
+wandb>=0.15.0  # For experiment tracking (optional)
