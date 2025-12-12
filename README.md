@@ -120,12 +120,18 @@ lerobot-find-port
 lerobot-setup-motors \
     --robot.type=so101_follower \
     --robot.port=/dev/tty.usbmodem585A0076841  # <- paste here the port found at previous step
+lerobot-setup-motors \
+    --teleop.type=so101_leader \
+    --teleop.port=/dev/tty.usbmodem575E0031751  # <- paste here the port found at previous step
 ```
 
 5. **Calibrate System:**
 ```bash
 # Calibrate encoder-angle relationships and set torque limits
-lerobot calibrate --robot-path so101
+lerobot-calibrate \
+    --robot.type=so101_follower \
+    --robot.port=/dev/tty.usbmodem58760431551 \ # <- The port of your robot
+    --robot.id=follower_arm # <- Give the robot a unique name
 ```
 
 ### WSL USB Device Sharing (Windows Users)
