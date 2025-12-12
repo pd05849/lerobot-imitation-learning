@@ -30,7 +30,7 @@ Model checkpoints are not included in this repository due to size constraints (~
 
 **Training Configuration:**
 - Steps: 60,000
-- Duration: ~4 hours
+- Duration: ~2.5 hours
 - Batch Size: 8
 - Learning Rate: 1e-4
 - Optimizer: AdamW
@@ -62,10 +62,22 @@ python src/train_model.py \
   --seed 42
 
 # Or use Google Colab notebook
-# notebooks/train_act_model.ipynb
+# https://colab.research.google.com/github/huggingface/notebooks/blob/main/lerobot/training-act.ipynb
 ```
 
 ## Visualizations
+
+## Visualizations
+
+### Overall Loss
+![Overall Training Loss](plots/overall_loss.png)
+
+### L1 Reconstruction Loss (MAE)
+![L1 Loss](plots/mae_loss.png)
+
+### GPU Metrics
+![GPU Power Usage](plots/gpu_power.png)
+![GPU Temperature](plots/gpu_temperature.png)
 
 ### Loss Curves
 Training showed consistent convergence without oscillations, indicating stable learning dynamics and appropriate hyperparameter selection.
@@ -73,10 +85,4 @@ Training showed consistent convergence without oscillations, indicating stable l
 ### GPU Metrics
 Power consumption remained high throughout training (~160W), highlighting computational demands of transformer-based policies and raising considerations for deployment on edge devices.
 
-## Future Improvements
 
-1. **Model Compression:** Investigate quantization and pruning to reduce model size
-2. **Efficient Training:** Explore mixed-precision training (FP16) for faster convergence
-3. **Hyperparameter Tuning:** Systematic search over learning rate, batch size, and architecture
-4. **Data Augmentation:** Add visual and temporal augmentation to improve generalization
-5. **Inference Optimization:** TensorRT/ONNX conversion for deployment
