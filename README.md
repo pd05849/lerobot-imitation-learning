@@ -318,6 +318,63 @@ If you use this code or dataset, please cite:
   archivePrefix={arXiv},
   primaryClass={cs.RO}
 }
+
+@misc{holderrieth2025introductionflowmatchingdiffusion,
+      title={An Introduction to Flow Matching and Diffusion Models}, 
+      author={Peter Holderrieth and Ezra Erives},
+      year={2025},
+      eprint={2506.02070},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2506.02070}, 
+}
+
+@misc{chi2024universalmanipulationinterfaceinthewild,
+      title={Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots}, 
+      author={Cheng Chi and Zhenjia Xu and Chuer Pan and Eric Cousineau and Benjamin Burchfiel and Siyuan Feng and Russ Tedrake and Shuran Song},
+      year={2024},
+      eprint={2402.10329},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2402.10329}, 
+}
+
+@article{10.1115/1.4070122,
+    author = {Thakur, Atul and Kaipa, Krishnanand and Banerjee, Ashis G. and Cappelleri, David J. and Krovi, Venkat N. and Gupta, Satyandra},
+    title = {Physical Artificial Intelligence for Powering the Next Revolution in Robotics},
+    journal = {Journal of Computing and Information Science in Engineering},
+    volume = {25},
+    number = {12},
+    pages = {120809},
+    year = {2025},
+    month = {11},
+    abstract = {Physical artificial intelligence (AI) is driving the next revolution in robotics by grounding perception, action, and cognition within a robot’s physical structure. Unlike traditional systems that rely on disembodied reasoning and preprogrammed control, physical AI leverages sensorimotor coupling to enable real-time adaptation, experiential learning, and generalized task performance. Advances in machine learning, high-fidelity simulations, and multimodal sensing have accelerated progress toward real-world deployment. This position article articulates a unifying perspective on physical AI, outlining its conceptual evolution, defining system-level principles, and analyzing key functional subsystems, such as situational awareness, mapping, planning, control, and human–robot interaction. It provides a domain-wise readiness assessment across manufacturing, healthcare, logistics, agriculture, service robotics, and space exploration, highlighting opportunities and limitations. Finally, it identifies critical challenges—real-time performance, cybersecurity, benchmarking, safety, interpretability, and energy efficiency—and proposes codesign principles and evaluation frameworks to guide future research. By synthesizing these elements, the article positions physical AI as a foundational paradigm for trustworthy, adaptive, and mission-ready robotic systems, offering readers a roadmap for research priorities, cross-domain insights, and practical implications that will shape the next era of robotics.},
+    issn = {1530-9827},
+    doi = {10.1115/1.4070122},
+    url = {https://doi.org/10.1115/1.4070122},
+    eprint = {https://asmedigitalcollection.asme.org/computingengineering/article-pdf/25/12/120809/7552531/jcise-25-1315.pdf},
+}
+
+@misc{kim2024openvlaopensourcevisionlanguageactionmodel,
+      title={OpenVLA: An Open-Source Vision-Language-Action Model}, 
+      author={Moo Jin Kim and Karl Pertsch and Siddharth Karamcheti and Ted Xiao and Ashwin Balakrishna and Suraj Nair and Rafael Rafailov and Ethan Foster and Grace Lam and Pannag Sanketi and Quan Vuong and Thomas Kollar and Benjamin Burchfiel and Russ Tedrake and Dorsa Sadigh and Sergey Levine and Percy Liang and Chelsea Finn},
+      year={2024},
+      eprint={2406.09246},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2406.09246}, 
+}
+
+@ARTICLE{10602544,
+  author={Zare, Maryam and Kebria, Parham M. and Khosravi, Abbas and Nahavandi, Saeid},
+  journal={IEEE Transactions on Cybernetics}, 
+  title={A Survey of Imitation Learning: Algorithms, Recent Developments, and Challenges}, 
+  year={2024},
+  volume={54},
+  number={12},
+  pages={7173-7186},
+  keywords={Training;Robots;Surveys;Costs;Autonomous vehicles;Trajectory;Reinforcement learning;Imitation learning;Imitation learning (IL);learning from demonstrations;reinforcement learning (RL);robotics;survey},
+  doi={10.1109/TCYB.2024.3395626}}
 ```
 
 ## License
