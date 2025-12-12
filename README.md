@@ -87,7 +87,7 @@ This project implements imitation learning for robotic manipulation using the Le
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/lerobot-imitation-learning.git
+git clone https://github.com/pd05849/lerobot-imitation-learning.git
 cd lerobot-imitation-learning
 ```
 
@@ -260,7 +260,7 @@ If you use this code or dataset, please cite:
   title = {Imitation Learning for Robotic Manipulation using LeRobot SO-101},
   year = {2025},
   institution = {Rensselaer Polytechnic Institute},
-  url = {https://github.com/yourusername/lerobot-imitation-learning}
+  url = {https://github.com/pd05849/lerobot-imitation-learning}
 }
 ```
 
@@ -301,5 +301,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For questions or collaboration:
 - **Email:** delcap@rpi.edu
-- **GitHub:** [Your GitHub Profile]
+- **GitHub:** [pd05849](https://github.com/pd05849)
 - **Dataset:** [HuggingFace Hub](https://huggingface.co/datasets/Delcastillo8/machine_learning_project)
