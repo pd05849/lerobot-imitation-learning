@@ -31,7 +31,6 @@ This project implements imitation learning for robotic manipulation using the Le
 - **Duration per Episode:** ~10 seconds
 - **Cameras:** Dual camera setup (overhead + laptop camera)
 - **Observations:** RGB images + 6 joint angle configurations
-- **Format:** LeRobot-compatible HDF5 format
 
 ## Model Overview
 
@@ -47,7 +46,7 @@ This project implements imitation learning for robotic manipulation using the Le
 
 ### Training Details
 - **Training Steps:** 60,000 steps
-- **Training Time:** ~4 hours
+- **Training Time:** ~2.5 hours
 - **Hardware:** GPU100 (Google Colab Pro)
 - **Convergence:** Both overall loss and L1 reconstruction loss converged to minimal error
 - **Power Consumption:** Peak GPU usage ~160W
@@ -60,7 +59,7 @@ This project implements imitation learning for robotic manipulation using the Le
 - 6x STS3215 Servo Motors (12V, 1/345 gear ratio)
 - Waveshare SCServo Bus Controller
 - 12V 4A power supply
-- USB-C cable
+- USB-C cable 
 
 **Leader Arm:**
 - 1x STS3215 Servo (7.4V, 1/345 gear ratio) - gripper
@@ -107,13 +106,23 @@ pip install lerobot
 
 2. **Assemble Arms:** Follow assembly instructions, ensuring proper motor placement and cable management
 
-3. **Configure Motor IDs:**
+3. **Find USB ports**
 ```bash
-# Use LeRobot calibration scripts to assign unique IDs to each servo
-lerobot configure-motors
+# Use this command to check for each servo adapter, connect to MotorBus to your computer via USB and power. 
+# Run the following script and disconnect the MotorBus when prompted:
+
+lerobot-find-port
 ```
 
-4. **Calibrate System:**
+4. **Configure Motor IDs:**
+```bash
+# Use LeRobot calibration scripts to assign unique IDs to each servo
+lerobot-setup-motors \
+    --robot.type=so101_follower \
+    --robot.port=/dev/tty.usbmodem585A0076841  # <- paste here the port found at previous step
+```
+
+5. **Calibrate System:**
 ```bash
 # Calibrate encoder-angle relationships and set torque limits
 lerobot calibrate --robot-path so101
