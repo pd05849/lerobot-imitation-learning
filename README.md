@@ -230,6 +230,21 @@ For Google Colab training, use the following notebook: (https://colab.research.g
 └── requirements.txt
 ```
 
+### Source Code Notes
+
+The `/src` folder contains simplified example scripts demonstrating the workflow:
+- `calibrate_robot.py` - Calibration utilities (educational example)
+- `record_episodes.py` - Episode recording workflow (educational example)  
+- `train_model.py` - Training pipeline structure (educational example)
+
+**Note:** These are conceptual examples showing the training workflow. The actual ACT policy implementation used for this project comes from:
+
+- **LeRobot ACT Implementation:** [lerobot/policies/act](https://github.com/huggingface/lerobot/tree/main/src/lerobot/policies/act)
+- **Original ACT Paper & Code:** [ALOHA: Learning Fine-Grained Bimanual Manipulation](https://tonyzhaozh.github.io/aloha/)
+- Installed via: `pip install lerobot`
+
+For production use and actual training, refer to the official LeRobot documentation and the original ALOHA project.
+
 ## Results and Key Findings
 
 ### Training Performance
