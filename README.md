@@ -153,58 +153,59 @@ usbipd attach --wsl --busid <your-busid>
 ### 1. Data Collection
 
 ```bash
-# Mount cameras and verify detection
-lerobot control-robot --robot-path so101 --display-cameras
-
-# Record teleoperation episodes
-lerobot record \
-  --robot-path so101 \
-  --repo-id Delcastillo8/machine_learning_project \
-  --fps 30 \
-  --num-episodes 50 \
-  --warmup-time-s 3 \
-  --episode-time-s 10 \
-  --reset-time-s 5
+# Teleoperation command to control the follower arm with the leader arm, make sure to set the same ID associated for each robot.
+lerobot-teleoperate \
+    --robot.type=so101_follower \
+    --robot.port=/dev/tty.usbmodem58760431541 \
+    --robot.id=my_awesome_follower_arm \
+    --teleop.type=so101_leader \
+    --teleop.port=/dev/tty.usbmodem58760431551 \
+    --teleop.id=my_awesome_leader_arm
 ```
 
-### 2. Dataset Upload to HuggingFace
+### 2. Camera detection
+
+Follow the instructions from this repo[lerobot-camera](https://huggingface.co/docs/lerobot/cameras)
+
+
+### 3. Teleoperate with cameras 
 
 ```bash
-# Push dataset to HuggingFace Hub
-lerobot push-dataset \
-  --repo-id Delcastillo8/machine_learning_project \
-  --local-dir ./data
+lerobot-teleoperate \
+    --robot.type=koch_follower \
+    --robot.port=/dev/tty.usbmodem58760431541 \
+    --robot.id=my_awesome_follower_arm \
+    --robot.cameras="{ front: {type: opencv, index_or_path: 0, width: 1920, height: 1080, fps: 30}}" \
+    --teleop.type=koch_leader \
+    --teleop.port=/dev/tty.usbmodem58760431551 \
+    --teleop.id=my_awesome_leader_arm \
+    --display_data=true
 ```
 
-### 3. Model Training
+### 4. Dataset Upload to HuggingFace
 
-```bash
-# Train ACT model
-lerobot train \
-  --policy act \
-  --dataset-repo-id Delcastillo8/machine_learning_project \
-  --output-dir ./results/act_model \
-  --num-train-steps 60000 \
-  --batch-size 8 \
-  --learning-rate 1e-4 \
-  --save-freq 10000 \
-  --eval-freq 5000 \
-  --log-freq 100
+To record a dataset and upload it to the HuggingFace Hub make sure to create a write-access token generated once you sign in here. (https://huggingface.co/settings/tokens)
+
+After recording the dataset set and uploading it into the cloud make sure to follow the instruction here:(https://huggingface.co/docs/lerobot/il_robots)
+
+
+### 5. Model Training
+
+```bash 
+# To train the ACT policy run the following: 
+
+lerobot-train \
+  --dataset.repo_id=${HF_USER}/your_dataset \
+  --policy.type=act \
+  --output_dir=outputs/train/act_your_dataset \
+  --job_name=act_your_dataset \
+  --policy.device=cuda \
+  --wandb.enable=true \
+  --policy.repo_id=${HF_USER}/act_policy
 ```
+For Google Colab training, use the following notebook: (https://colab.research.google.com/github/huggingface/notebooks/blob/main/lerobot/training-act.ipynb)
 
-For Google Colab training, use the notebook in `/notebooks/train_act_model.ipynb`
-
-### 4. Model Evaluation (Inference)
-
-```bash
-# Run inference with trained model
-lerobot eval \
-  --policy-path ./results/act_model \
-  --robot-path so101 \
-  --num-episodes 10
-```
-
-**Note:** Inference testing was not completed in this project due to time constraints and hardware compatibility issues.
+**Note:** Inference testing was not completed in this project, work is currently being done of completing that part.
 
 ## Project Structure
 
@@ -234,7 +235,7 @@ lerobot eval \
 ### Training Performance
 - **Overall Loss:** Converged to near-zero after 60,000 steps
 - **L1 Reconstruction Loss (MAE):** Converged to minimal error
-- **Training Duration:** ~4 hours on GPU100
+- **Training Duration:** ~ 2.5hours on GPU100
 - **GPU Power Usage:** Peak 160W
 - **Model Size:** ~150MB (checkpoint)
 
@@ -266,7 +267,6 @@ lerobot eval \
 - Complete inference testing and deployment validation
 - Expand to multi-task learning with task conditioning
 - Investigate sim-to-real transfer to reduce hardware dependency
-- Optimize model for edge deployment (reduced power consumption)
 - Test robustness to environmental perturbations
 
 ## Citation
