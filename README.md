@@ -132,6 +132,10 @@ lerobot-calibrate \
     --robot.type=so101_follower \
     --robot.port=/dev/tty.usbmodem58760431551 \ # <- The port of your robot
     --robot.id=follower_arm # <- Give the robot a unique name
+lerobot-calibrate \
+    --teleop.type=so101_leader \
+    --teleop.port=/dev/tty.usbmodem58760431551 \ # <- The port of your robot
+    --teleop.id=my_awesome_leader_arm # <- Give the robot a unique name
 ```
 
 ### WSL USB Device Sharing (Windows Users)
