@@ -1,7 +1,6 @@
 # Imitation Learning for Robotic Manipulation using LeRobot SO-101
 
-**Author:** Pol del Castillo  
-**Student ID:** 662116017  
+**Author:** Pol del Castillo   
 **Email:** delcap@rpi.edu  
 **Institution:** Rensselaer Polytechnic Institute
 
